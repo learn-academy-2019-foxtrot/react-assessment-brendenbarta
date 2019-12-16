@@ -4,7 +4,19 @@
 // NOTE: In this assessment you will NOT be running a react file structure
 
 // 1. Write a React component that prints "I am a component!" Be sure to include all necessary imports, exports, etc.
+import React, { Component } from 'react'
 
+class PrintThis extends Component {
+  render() {
+    return (
+      <div>
+        <p>I am component</p>
+      </div>
+    )
+  }
+}
+
+export default PrintThis
 
 
 
@@ -16,6 +28,10 @@ var names = ["Ford Prefect", "Arthur Dent", "Trillian", "Zaphod", "Vogon", "Marv
 for(let i=0; i<names.length; i++){
   console.log(`${names[i]} is ${names[i].length} characters long.`)
 }
+var wordLength = names.map(value =>
+ `${value} is ${value.length} characters long.`)
+
+console.log(wordLength)
 
 
 
@@ -28,26 +44,41 @@ this.state = {
 }
 
 
+const {name, home, dislikes} = this.state
+
+
+
 
 // 4. Write a React method that would add one and update the state of the count each time the method is called.
 
 this.state = {
   count: 0
 }
+ render() {
+    return this.state.count + 1
+  }
+  
+  
+  //or??
+  
+  UpdateCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  }
 
 
 
-// 5. There are four mistakes in this code that would cause it to break our application. Find the mistakes and fix them:
+5. There are four mistakes in this code that would cause it to break our application. Find the mistakes and fix them:
 
 import React, { Component } from 'react';
 
-class Recipes{
+class Recipes extends component{
   constructor(props){
     super(props)
     this.state = {
-      recipes:
-        {name: 'Meatballs'},
-        {name: 'Mac & Cheese'}
+      recipes: [
+        name: 'Meatballs',
+        name: 'Mac & Cheese'
+        ]
     }
   }
 
@@ -55,11 +86,11 @@ class Recipes{
     return(
       let recipe = recipes.map(recipe => {
         return(
-          <li key={recipe.name}>{recipe.name}</li>
+          <li> key={recipes.name}>{recipes.name}</li>
         )
       })
       <ul>
-        {recipe}
+        {recipes}
       </ul>
     )
   }
