@@ -28,6 +28,7 @@ var names = ["Ford Prefect", "Arthur Dent", "Trillian", "Zaphod", "Vogon", "Marv
 for(let i=0; i<names.length; i++){
   console.log(`${names[i]} is ${names[i].length} characters long.`)
 }
+
 var wordLength = names.map(value =>
  `${value} is ${value.length} characters long.`)
 
